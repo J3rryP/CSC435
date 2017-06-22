@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+   <!-- To save as "hello\WEB-INF\web.xml" -->
+   
+   <servlet>
+      <servlet-name>Social1</servlet-name>
+      <servlet-class>Social</servlet-class>
+   </servlet>
+   
+   <servlet>
+      <servlet-name>Social2</servlet-name>
+      <servlet-class>SocialEcho</servlet-class>
+   </servlet>
+   
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+ 
+ 	<servlet-mapping>
+      <servlet-name>Social2</servlet-name>
+      <url-pattern>/stateful</url-pattern>
+   </servlet-mapping>
+ 
+ 	<servlet-mapping>
+      <servlet-name>Social1</servlet-name>
+      <url-pattern>/stateless</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet>
+		<servlet-name>Restful0</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Restful0</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+   
+   
+</web-app>

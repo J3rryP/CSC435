@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  <title>User Input Form</title>
+</head>
+
+<body>
+<h2>Food Finder</h2>
+<form method="get" action="persist.jsp">
+  <fieldset>
+    <legend>Personal Particular</legend>
+    Name: <input type="text" name="username" /><br /><br />
+    Password: <input type="password" name="password" /><br /><br />
+    Gender: <input type="radio" name="gender" value="m" checked />Male
+    <input type="radio" name="gender" value="f" />Female<br /><br />
+    Age: <select name = "age">
+      <option value="10"> 10 to 13 </option>
+      <option value="14"> 14 to 17 </option>
+      <option value="18"> 18 to 25</option>
+      <option value="26"> 26 to 35</option>
+      <option value="35"> 35+</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Food Groups</legend>
+    <input type="checkbox" name="group" value="vegetables" checked />Vegetables
+    <input type="checkbox" name="group" value="fruits" />Fruits
+    <input type="checkbox" name="group" value="grain" />Grain
+    <input type="checkbox" name="group" value="fish" />Fish
+	<input type="checkbox" name="group" value="meat" />Meat
+    <input type="checkbox" name="group" value="milk" />Milk
+  </fieldset>
+
+
+
+  <input type="hidden" name="secret" value="888" />
+  <input type="submit" value="SEND" />
+  <input type="reset" value="CLEAR" />
+</form>
+</body>
+</html>
