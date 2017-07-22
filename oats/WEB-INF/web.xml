@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+  <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
+ 
+   <servlet>
+      <servlet-name>UserServlet</servlet-name>
+      <servlet-class>RegisterServlet</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>UserServlet</servlet-name>
+      <url-pattern>/nuser</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>SigninServlet</servlet-name>
+      <servlet-class>LoginServlet</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>SigninServlet</servlet-name>
+      <url-pattern>/welcome</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>RestServlet</servlet-name>
+      <servlet-class>RestGet</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>RestServlet</servlet-name>
+      <url-pattern>/api/users/*</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>RestServlet2</servlet-name>
+      <servlet-class>RestPut</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>RestServlet2</servlet-name>
+      <url-pattern>/api/user</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet>
+      <servlet-name>RestServlet3</servlet-name>
+      <servlet-class>RestPost</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>RestServlet3</servlet-name>
+      <url-pattern>/api/puser</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>LogoutServlet1</servlet-name>
+      <servlet-class>LogoutServlet</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>LogoutServlet1</servlet-name>
+      <url-pattern>/Logout</url-pattern>
+   </servlet-mapping>
+   
+   
+</web-app>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  <title>User-Request-Info</title>
+</head>
+
+<body>
+<h2>Food Finder</h2>
+<form method="get" action="api/users">
+  <fieldset>
+    <legend>Request Info from Database based on which gender</legend>
+    Gender: <input type="radio" name="gender" value="m" checked />Male
+    <input type="radio" name="gender" value="f" />Female<br /><br />
+
+  </fieldset>
+
+  <input type="hidden" name="secret" value="888" />
+  <input type="submit" value="SEND" />
+  <input type="reset" value="CLEAR" />
+</form>
+</body>
+</html>

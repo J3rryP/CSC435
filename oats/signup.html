@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  <title>Register here</title>
+</head>
+
+<body>
+<h2>Food Finder</h2>
+<form method="post" action="nuser">
+  <fieldset>
+    <legend>Enter your info</legend>
+    Username: <input type="text" name="username" /><br /><br />
+    Email: <input type="text" name="email" /><br /><br />
+    Password: <input type="password" name="password" /><br /><br />
+    Gender: <input type="radio" name="gender" value="m" checked />Male
+    <input type="radio" name="gender" value="f" />Female<br /><br />
+    Age: <select name = "age">
+      <option value="10"> 10 to 13 </option>
+      <option value="14"> 14 to 17 </option>
+      <option value="18"> 18 to 25</option>
+      <option value="26"> 26 to 35</option>
+      <option value="35"> 35+</option>
+    </select>
+  </fieldset>
+
+  <input type="hidden" name="secret" value="888" />
+  <input type="submit" value="SEND" />
+  <input type="reset" value="CLEAR" />
+</form>
+</body>
+</html>
