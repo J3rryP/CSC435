@@ -1,0 +1,20 @@
+@(field: Field, label: String = "CHANGEME", help: String = "")
+
+  <div class="form-group @if(field.hasErrors) {has-error}">
+    <label class="col-sm-2 control-label" for="@field.id">@label</label>
+    <div class="col-sm-10">
+      <select
+        class="form-control"
+        id="@field.id">
+      
+          <option id="@field.name" value="10" >10 to 13</option>
+          <option id="@field.name" value="14" >14 to 17</option>
+          <option id="@field.name" value="18" >18 to 25</option>
+          <option id="@field.name" value="26" >26 to 35</option>
+          <option id="@field.name" value="35" >35+</option>
+       
+      </select>
+      <span class="help-block">@help</span>
+      <span class="help-block">@{field.error.map { error => error.message }}</span>
+    </div>
+  </div>

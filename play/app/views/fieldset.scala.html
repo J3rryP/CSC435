@@ -1,0 +1,40 @@
+
+@(studentForm: Form[views.formdata.UserData])
+
+@import views.html.fields._
+
+<fieldset>
+  <!-- Header -->
+  <div id="legend">
+    <legend>Sign up</legend>
+  </div>
+@text(studentForm("name"),
+        label = "Username",
+        placeholder = "Enter a your name",
+        help = "Please enter your first and last name. (required)")
+        
+@text(studentForm("email"),
+        label = "Email",
+        placeholder = "Enter a special email",
+        help = "Please enter your email. (required)")
+        
+ @password(studentForm("password"),
+            label = "Password",
+            placeholder = "Enter a strong password",
+            help = "Password must be five or more characters. (required)")
+            
+  @radiobutton(studentForm("gender"),
+                label = "Level",
+                help = "Select your gender preference. (required)")
+                
+  @select(studentForm("age"),
+          label = "Age",
+          help = "Select your Age. (required)")
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+      <button id="cancel" class="btn cancel">Cancel</button>
+    </div>
+  </div>
+</fieldset>

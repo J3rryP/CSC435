@@ -1,0 +1,41 @@
+
+@(studentForm: Form[models.Login]
+  )
+
+@import helper._
+
+@main("Welcome to Oats") {
+	
+	
+	<div class="jumbotron">
+      <form class="form-signin" action=welcome method="post" >
+        <h2 class="form-signin-heading">Sign in</h2>
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        @input(studentForm("email")) { (id, name, value, htmlArgs) =>
+        <input type="email" id="@id" class="form-control" name="@name" value="@value" placeholder="Email address" required autofocus @toHtmlArgs(htmlArgs)>
+        }
+        <label for="inputPassword" class="sr-only">Password</label>
+         @input(studentForm("password")) { (id, name, value, htmlArgs) =>
+        <input type="password" id="@id" class="form-control" name="@name" value="@value" placeholder="Password" required @toHtmlArgs(htmlArgs)>
+        }
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+       
+        <br>Don't have an account? <li><a href="@routes.HomeController.postRegister">Sign up</a></li>
+        
+    </div>
+    @if(flash.containsKey("error")) {
+  		<div class="well">
+    	<div id="error-message" class="text-danger">
+      @flash.get("error")
+      }
+    
+}
+
+
+

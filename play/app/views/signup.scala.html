@@ -1,0 +1,99 @@
+@(studentForm: Form[models.User]
+  )
+
+@import helper._
+
+@main("Oats") {
+	
+	<div class="jumbotron">
+      <form class="form-signin" action=register method="post" >
+        <h2 class="form-signin-heading">Sign up</h2>
+        
+       
+        <div class="col-sm-10">
+         @input(studentForm("name")) { (id, name, value, htmlArgs) =>
+        <input type="text" 
+             class="form-control" 
+             id="@id" 
+             name="@name" 
+             value="@value"
+             placeholder="Enter a name" />
+         </div>
+        }
+        <div class="col-sm-10">
+        @input(studentForm("email")) { (id, name, value, htmlArgs) =>
+        <input type="text" 
+             class="form-control" 
+             id="@id" 
+             name="@name" 
+             value="@value"
+             placeholder="Enter an email" />
+         </div>
+        }
+        <div class="col-sm-10">
+        @input(studentForm("password")) { (id, name, value, htmlArgs) =>
+        <input type="password" 
+             class="form-control" 
+             id="@id" 
+             name="@name" 
+             value="@value"
+             placeholder="Enter a strong password" />
+         </div>
+        }
+        
+        <div class="col-sm-10" >
+    @input(studentForm("gender")) { (id, name, value, htmlArgs) =>
+      <label class="radio-inline">
+        <input
+          type="radio"
+          name="@name"
+          id="@id"
+          value="M"
+          />
+        Male
+      </label>
+      <input
+          type="radio"
+          name="@name"
+          id="id"
+          value="F"
+          />
+        Female
+      </label>
+   
+      <span class="help-block">Choose a gender</span>
+      <span class="help-block"></span>
+    </div>
+        }
+        
+        
+        <div class="col-sm-10">
+        @input(studentForm("age")) { (id, name, value, htmlArgs) =>
+      <select
+        class="form-control"
+        id="@id">
+      
+          <option id="@name" value="10" >10 to 13</option>
+          <option id="@name" value="14" >14 to 17</option>
+          <option id="@name" value="18" >18 to 25</option>
+          <option id="@name" value="26" >26 to 35</option>
+          <option id="@name" value="35" >35+</option>
+       
+      </select>
+      <span class="help-block">Choose your age</span>
+      <span class="help-block"></span>
+    </div>
+    	}
+    	<div class="col-sm-10">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+       </div>
+        
+        
+    </div>
+    @if(flash.containsKey("error")) {
+  		<div class="well">
+    	<div id="error-message" class="text-danger">
+      @flash.get("error")
+      }
+
+}
