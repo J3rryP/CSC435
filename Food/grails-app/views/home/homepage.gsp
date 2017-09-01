@@ -15,11 +15,11 @@
             <br>
          </form>
          <g:if test = "${url != null}">
-          <iframe</iframe>
+          <iframe src= ""</iframe>
             <div class="container-fluid">
             <% url.each { ex -> %>
 
-               <iframe</iframe>
+               <iframe src= ""</iframe>
                &nbsp;
             <%}%>
                 </div>
